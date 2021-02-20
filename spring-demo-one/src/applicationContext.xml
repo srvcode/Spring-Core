@@ -18,12 +18,15 @@
 		<constructor-arg ref="myFortuneService" />
 
 	</bean>
-	
-	<bean id = "myCricketCoach"
-		class = "com.srvcode.springdemo.CricketCoach">
-		
+
+	<bean id="myCricketCoach" class="com.srvcode.springdemo.CricketCoach">
+
 		<!-- set up setter injection -->
-		<property name= "fortuneService" ref="myFortuneService"/>
+		<property name="fortuneService" ref="myFortuneService" />
+
+		<!-- inject literal values -->
+		<property name="emailAddress" value="srvcode@gmail.com"/>
+		<property name="team" value="Sunrisers Hyderabad"/>
 	</bean>
 
 	<bean id="myLoggerConfig" class="com.srvcode.springdemo.MyLoggerConfig"
@@ -33,8 +36,3 @@
 	</bean>
 
 </beans>
-
-
-
-
-
