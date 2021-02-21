@@ -6,32 +6,15 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="classpath:sport.properties"/>
-
 	<!-- define the dependency -->
 	<bean id="myFortuneService" class="com.srvcode.springdemo.HappyFortuneService">
 	</bean>
 
-	<bean id="myCoach" class="com.srvcode.springdemo.BaseballCoach">
+	<bean id="myCoach" class="com.srvcode.springdemo.BaseballCoach"
+		scope="prototype">
 
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService" />
-
-	</bean>
-
-	<bean id="myCricketCoach" class="com.srvcode.springdemo.CricketCoach">
-
-		<!-- set up setter injection -->
-		<property name="fortuneService" ref="myFortuneService" />
-
-		<!-- inject hard coded literal values -->
-		<!-- <property name="emailAddress" value="srvcode@gmail.com"/>
-		<property name="team" value="Sunrisers Hyderabad"/> -->
-		
-		<!-- inject configuration literal values -->
-		<property name="emailAddress" value="${foo.email}"/>
-		<property name="team" value="${foo.team}"/>
-		
 	</bean>
 
 	<bean id="myLoggerConfig" class="com.srvcode.springdemo.MyLoggerConfig"
