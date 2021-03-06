@@ -11,11 +11,17 @@
 	</bean>
 
 	<bean id="myCoach" class="com.srvcode.springdemo.TrackCoach"
-		init-method="doMyStartupStuff" destroy-method="doMyCleanupStuffYoYo">
+		init-method="doMyStartupStuff" destroy-method="destroy"
+		scope="prototype">
 
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService" />
 	</bean>
+
+	<!-- Bean custom processor to handle calling destroy methods on prototype scoped beans -->
+    <bean id="customProcessor"
+    		class="com.srvcode.springdemo.MyCustomBeanProcessor">
+   	</bean>
 
 	<bean id="myLoggerConfig" class="com.srvcode.springdemo.MyLoggerConfig"
 		init-method="initLogger">
