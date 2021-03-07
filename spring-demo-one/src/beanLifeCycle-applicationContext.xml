@@ -25,8 +25,8 @@
 
 	<bean id="myLoggerConfig" class="com.srvcode.springdemo.MyLoggerConfig"
 		init-method="initLogger">
-		<property name="rootLoggerLevel" value="FINE" />
-		<property name="printedLoggerLevel" value="FINE" />
+		<property name="rootLoggerLevel" value="ALL" />
+		<property name="printedLoggerLevel" value="ALL" />
 	</bean>
 
 </beans>
