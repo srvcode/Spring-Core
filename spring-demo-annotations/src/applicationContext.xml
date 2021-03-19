@@ -8,9 +8,7 @@
 
 	<!-- add entry to enable component scanning -->
 
-	<context:component-scan base-package="com.srvcode.springdemo"/>
-
-	<context:property-placeholder location="classpath:sport.properties"/>  
+<!-- 	<context:component-scan base-package="com.srvcode.springdemo"/> -->
 
 	<bean id="myLoggerConfig" class="com.srvcode.springdemo.MyLoggerConfig"
 		init-method="initLogger">
