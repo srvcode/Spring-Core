@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class SwimCoach implements Coach {
 
-	@Autowired
-	@Qualifier("randomFortuneService")
+	//@Autowired
+	//@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	@Value("${foo.email}")
@@ -18,12 +18,8 @@ public class SwimCoach implements Coach {
 	@Value("${foo.team}")
 	private String team;
 	
-	public FortuneService getFortuneService() {
-		return fortuneService;
-	}
-
-
-	public SwimCoach() {
+	public SwimCoach(FortuneService theFortuneService) {
+		fortuneService = theFortuneService;
 	}
 	
 	@Override
